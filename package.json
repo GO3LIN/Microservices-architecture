@@ -9,11 +9,7 @@
     "test": "grunt test",
     "start": "grunt serve"
   },
-  "author": {
-    "name": "Hakim El Hattab",
-    "email": "hakim.elhattab@gmail.com",
-    "web": "http://hakim.se"
-  },
+  "author": "Hakim El Hattab <hakim.elhattab@gmail.com> (http://hakim.se)",
   "repository": {
     "type": "git",
     "url": "git://github.com/hakimel/reveal.js.git"
@@ -41,5 +37,11 @@
     "grunt-zip": "~0.17.1",
     "node-sass": "~3.13.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hakimel/reveal.js/issues"
+  },
+  "directories": {
+    "test": "test"
+  }
 }

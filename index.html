@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>The microservices architecture - How to migrate from a monolithic system</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -20,12 +20,147 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		<link rel="stylesheet" href="css/custom.css">
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-background-image="img/msc.jpg" class="slide1">
+					<h1>Microservices</h1>
+					How to migrate from a monolithic system
+					<p>
+						Created with &#9825 by El Mehdi Benmoha for LeKiosk
+					</p>
+				</section>
+				<section class="slide2">
+					<section class="slide2">
+						<div class="left">
+							<p>
+								<h2 class="fragment">Monolith</h2>
+							</p>
+							<p class="fragment">
+								<img width="512" height="680" src="img/mono.jpg"><br>
+								1 element (monoslithos en grec)
+							</p>
+						</div>
+						<div class="right">
+							<p>
+								<h2 class="fragment">MicroServices</h2>
+							</p>
+							<p class="fragment" style="z-index: 9999">
+								<img width="512" height="680" src="img/stone-beach.jpg"><br>
+								n elements
+							</p>
+						</div>
+						<div style="clear: both"></div>
+					</section>
+					<section class="slide3">
+						<div class="full">
+							<p>
+								<h2>LeKiosk Monolith</h2>
+							</p>
+							<div class="float-left">
+								<p class="fragment">
+									<img class="fragment" src="img/LKMonolithic.svg">
+								</p>
+							</div>
+							<p class="">
+								<ul>
+									<li class="fragment">Simple to develop</li>
+									<li class="fragment">Simple to deploy</li>
+									<li class="fragment">Simple to scale</li>
+								</ul>
+								<br>
+								<br>
+								<ul class="pros">
+									<li class="fragment">1D scaling</li>
+									<li class="fragment">New developers intimidated</li>
+									<li class="fragment">Hard Continous deployment</li>
+									<li class="fragment">Long-term commitement to a technology.</li>
+								</ul>
+							</p>
+						</div>
+					</section>
+					<section class="slide4">
+						<div class="full">
+							<p>
+								<h2>Microservice architecture</h2>
+							</p>
+							<div class="float-left">
+								<p class="fragment">
+									<img class="fragment" src="img/LKMicro.svg">
+								</p>
+							</div>
+							<p class="">
+								<ul>
+									<li class="fragment">Loosely coupled</li>
+									<li class="fragment">Collaborating services</li>
+								</ul>
+								<br>
+								<br>
+								<ul class="pros">
+									<li class="fragment">Fast deployment</li>
+									<li class="fragment">Isolation</li>
+									<li class="fragment">No more long-term commitement to a technology.</li>
+								</ul>
+								<br>
+								<br>
+								<ul class="cons">
+									<li class="fragment">Overhead of creating a distributed system</li>
+									<li class="fragment">Deployment complexity</li>
+									<li class="fragment">Increased memory consumption</li>
+								</ul>
+							</p>
+						</div>
+					</section>
+				</section>
+
+				<section>
+					<section data-background-color="#EFECCA" class="slideBeige">
+						<p>
+							<h2>Decomposing the monolith</h2>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<img width="512" src="img/lightDecomp.gif">
+						</p>
+					</section>
+					<section data-background-color="#A7A37E">
+						<p>
+							<h2>Decompose by business capabilities</h2>
+							<img class="fragment" width="1200" src="img/decomp.jpg">
+						</p>
+					</section>
+					<section data-background-color="#046380">
+						<p>
+							<h2>Decompose by DDD subdomain</h2>
+							<br>
+							<br>
+							<img class="fragment" src="img/ddd.jpg">
+						</p>
+					</section>
+					<section data-background-color="#002F2F">
+						<p>
+							<h2>Database decomposition</h2>
+							<div class="float-left">
+								<p>
+									<ul>
+										<li class="fragment">Join data through services</li>
+										<li class="fragment">Command Query Responsibility Segregation (CQRS)</li>
+									</ul>
+								</p>
+							</div>
+							<div >
+								<img class="fragment" src="img/DBDecomp.svg">
+							</div>
+						</p>
+					</section>
+				</section>
+				<section data-background-image="img/alibaba.jpg">
+					<img src="img/conclusion.svg" border="0" class="noStyle">
+				</section>
 			</div>
 		</div>
 
@@ -36,6 +171,13 @@
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
+				slideNumber: true,
+				center: false,
+				transition: 'fade',
+				backgroundTransition: 'zoom',
+				width: "100%",
+				height: "100%",
+				margin: 0,
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
